@@ -1,0 +1,155 @@
+wh(width = 100%, height = 100%)
+  width width
+  height height
+html, body, div, span, object, iframe,pre, h1, h2, h3, h4, h5, h6, p, blockquote, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label,legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, a, canvas, figcaption, figure, footer, header, main, hgroup, nav, section, mark, audio, video
+  cursor pointer
+  -webkit-tap-highlight-color transparent
+
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption
+  margin: 0
+  padding: 0
+  list-style: none
+  font-style: normal
+  text-decoration: none
+  border: none
+  color: #333
+  font-weight: normal
+  -webkit-tap-highlight-color transparent
+  -webkit-font-smoothing: antialiased  // 对字体进行抗锯齿渲染，是字体看起来更清晰舒服
+  -moz-osx-font-smoothing: grayscale
+  &:hover
+    outline: none
+
+p, h1, h2, h3, h4, h5, h6, div, span, header, footer, nav, section
+  text-align center
+  // line-height 1
+
+html, body
+  /*width: 100%
+  height: 100%*/
+  wh()
+  //overflow hidden
+
+body
+  font-size .14rem
+  color #333
+  -webkit-tap-highlight-color: transparent;/*点击不闪*/
+  -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -khtml-user-select:none; /*早期浏览器*/
+  -moz-user-select:none;/*火狐*/
+  -ms-user-select:none; /*IE10*/
+  user-select:none;
+
+img
+  vertical-align middle
+
+input
+  outline none
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"]
+  -webkit-appearance none
+
+
+.clearfix
+  display inline-block
+  &:after
+    display block
+    content ''
+    height 0
+    line-height 0
+    clear both
+    visibility hidden
+
+.ellipsis
+  display block
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+ellipse_line(num = 1)
+  overflow hidden
+  display -webkit-box
+  -ms-text-overflow ellipsis
+  text-overflow ellipsis
+  -webkit-line-clamp num
+  -webkit-box-orient vertical
+
+
+  /*border start*/
+border-top-1px($color)
+  position: relative
+  &::before
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+
+border-bottom-1px($color)
+  position: relative
+  &::after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-bottom: 1px solid $color
+    content: ' '
+
+
+border-none()
+  &::after
+    border: none
+
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+  .border-1px
+    &::after
+      -webkit-transform : scaleY(0.7)
+      transform: scaleY(0.7)
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+  .border-1px
+    &::after
+      -webkit-transform scaleY(0.5)
+      transform scaleY(0.5)
+/*border end*/
+
+/*background-image start*/
+bg-img(url)
+  background-image: url("./img/"+url+"@2x.png")
+  background-repeat no-repeat
+  background-size: cover
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url("./img/"+url+"@3x.png")
+/*background-image end*/
+
+
+@keyframes jetter
+  0%
+    transform: translateX(0px)
+  25%
+    transform: translateX(6px)
+  50%
+    transform: translateX(0px)
+  75%
+    transform: translateX(-6px)
+  100%
+    transform: translateX(0px)
+
+
+/*input[type=search]::-webkit-search-cancel-button
+  -webkit-appearance: none
+  position: relative
+  &::after
+    position: absolute
+    content: 'x'
+    right: .04rem
+    top: 0
+    font-size .16rem
+    line-height .33rem
+    color: #5156ff*/
+
